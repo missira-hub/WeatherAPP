@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #weather {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌤️ Simple Weather App</h1>
+  <input type="text" id="cityInput" placeholder="Enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+
+  <div id="weather"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
