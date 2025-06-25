@@ -1,4 +1,5 @@
-# WeatherAPP
+# Weather-app
+
 This is my introductory project for my summer internship
 the app is suppose to display the temperature of a particular city 
 No city excluded and a description of that temperature 
