@@ -1,0 +1,21 @@
+#weather, #forecast, #history, #favorites {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  background: #f0f8ff;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forecast-item {
+  display: inline-block;
+  text-align: center;
+  margin: 10px;
+}
+
+@media (max-width: 600px) {
+  .forecast-item {
+    display: block;
+  }
+}
