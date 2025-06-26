@@ -1,21 +1,145 @@
-#weather, #forecast, #history, #favorites {
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  background: #0f8dfc;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+:root {
+  --ocean-blue: lab(97.44% -2.12 -1.29 / 0.921);
+  --bg-color: var(--ocean-blue);
+  --text-color: hsl(240, 76%, 44%);
+  --button-bg: #6b80ac;
+  --button-text: #171515;
 }
 
-.forecast-item {
-  display: inline-block;
+body.dark-mode {
+  --bg-color: #1f1fd088;
+  --text-color: var(--ocean-blue);
+  --button-bg: #1818f5;
+  --button-text: var(--ocean-blue);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+#map {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  background-color: #75abda98;
+  padding: 20px;
+}
+
+.app {
+  max-width: 900px;
+  margin: auto;
+}
+
+header {
   text-align: center;
-  margin: 10px;
+  margin-bottom: 30px;
 }
 
-@media (max-width: 600px) {
-  .forecast-item {
-    display: block;
-  }
+.search-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+input, button, select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid var(--text-color);
+  background-color: transparent;
+  color: var(--text-color);
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input::placeholder {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+button:hover, select:hover {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.forecast-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+/* Remove boxes, keep layout and colors */
+.card, .forecast-item {
+  /* background removed for flat style */
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  min-width: 120px;
+  text-align: center;
+  font-size: 17px;
+  flex: 0 0 auto;
+  color: var(--text-color);
+}
+
+.card img, .forecast-item img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Bigger current weather icon */
+#current img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Favorites */
+#favoritesSection {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#favoritesList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#favoritesList li {
+  background-color: hsl(0, 3%, 6%);
+  color: var(--ocean-blue);
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+#favoritesList li:hover {
+  background-color: #0f0f0f;
 }
