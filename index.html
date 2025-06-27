@@ -1,61 +1,72 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sira's Weather App</title>
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-sA+e2uhzHP7vG2DRD4mK8kKfe3hS0V4zG1F9zLM0wak="
+    crossorigin=""
+  />
 </head>
 <body>
-  <div id="map"></div>
-  <div class="overlay app">
-    <header>
-      <h1 id="appTitle">Weather App</h1>
-      <div class="search-wrapper">
-        <input
-          type="text"
-          id="cityInput"
-          placeholder="Enter city..."
-          list="suggestions"
-          autocomplete="off"
-        />
-        <datalist id="suggestions"></datalist>
-        <button id="themeToggleBtn" title="Toggle Dark Mode">🌙</button>
-        <select id="languageSelect" title="Select Language">
-          <option value="en">English</option>
-          <option value="fr">Français</option>
-          <option value="tr">Türkçe</option>
-        </select>
-      </div>
-    </header>
-
-    <section id="currentWeather">
-      <div id="current" class="row"></div>
-    </section>
-
-    <section>
-      <h2 id="nextForecastTitle">Next 5-Day Forecast</h2>
-      <div id="forecast" class="forecast-row"></div>
-    </section>
-
-    <section>
-      <h2 id="lastForecastTitle">Last 5 Days</h2>
-      <div id="history" class="forecast-row"></div>
-    </section>
-
-    <section id="favoritesSection">
-      <h3 id="favoritesTitle">Favorite Cities</h3>
-      <ul id="favoritesList"></ul>
+  <div class="app-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar left">
+      <h1 id="appTitle">Sira's Weather App</h1>
       <button id="addFavoriteBtn">Add Current City to Favorites</button>
-      <p id="favoritesInstructions" style="font-size: 0.9em; margin-top: 5px;">
-        Click city to load. Double-click to remove.
-      </p>
-    </section>
+
+      <select id="languageSelect" title="Select Language">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="tr">TR</option>
+      </select>
+
+      <button id="themeToggleBtn" title="Toggle Dark Mode">🌙</button>
+
+      <div class="favorites">
+        <h3 id="favoritesTitle">Favorite Cities</h3>
+        <ul id="favoritesList"></ul>
+        <p id="favoritesInstructions">Click to load. Double-click to remove.</p>
+      </div>
+    </div>
+
+    <!-- Center Weather Display -->
+    <div class="main-content">
+      <div class="search-bar">
+        <input id="cityInput" type="text" placeholder="Enter city..." autocomplete="on" />
+      </div>
+      <ul id="suggestions" class="suggestions"></ul>
+
+      <div id="current" class="current-weather"></div>
+
+      <h3 id="lastForecastTitle">Last 5 Days</h3>
+      <div id="history" class="forecast-row"></div>
+      <div id="sunInfo" class="sun-info"></div>
+      <div id="weatherMood" class="weather-mood"></div>
+      <div id="weatherTips" class="weather-tips"></div>
+
+
+      <!-- Map -->
+      <div id="map" style="height: 300px; width: 100%; border-radius: 12px; margin-top: 20px;"></div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="sidebar right">
+      <h3 id="nextForecastTitle">Next 5-Day Forecast</h3>
+      <div id="forecast" class="forecast-vertical"></div>
+    </div>
   </div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/skycons@1.0.0/skycons.js"></script>
-<script src="script.js"></script>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-p5Q+1F4nCpUORn2E2AEzAwo4XKhKjMEjU08rFfL0zJk="
+    crossorigin=""
+  ></script>
+  <script src="script.js"></script>
 </body>
 </html>
