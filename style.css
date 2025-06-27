@@ -1,7 +1,7 @@
 :root {
   --bg-color: #fff8e1;            /* soft light beige */
-  --text-color: #2c2c2c;          /* dark readable text */
-  --card-text: #3a2e00;           /* dark warm brown */
+  --text-color: #181818;          /* dark readable text */
+  --card-text: #0d0d0b;           /* dark warm brown */
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -21,7 +21,7 @@ body {
 
 .sidebar,
 .main-content {
-  background-color: rgba(255, 250, 205, 0.65);
+  background-color: rgba(239, 239, 235, 0.65);
   backdrop-filter: blur(4px);
   padding: 20px;
   box-sizing: border-box;
@@ -30,22 +30,22 @@ body {
 }
 
 .sidebar.left {
-  width: 280px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  background-color: rgba(255, 245, 200, 0.25);
+  background-color: rgba(12, 12, 11, 0.25);
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
 
 .sidebar.right {
-  width: 600px;
-  padding-top: 60px;
-  background-color: rgba(255, 255, 240, 0.2);
-  border-radius: 12px;
+  width: 400px;
+  padding-top: 100px;
+  background-color: rgba(18, 18, 17, 0.581);
+  border-radius: 16px;
   box-shadow: var(--shadow);
-  padding: 20px 20px 40px 20px;
+  padding: 30px 30px 40px 30px;
 }
 
 .main-content {
@@ -55,7 +55,7 @@ body {
   flex-direction: column;
   gap: 25px;
   align-items: center;
-  background-color: rgba(255, 253, 210, 0.3);
+  background-color: rgba(255, 253, 210, 0.303);
   border-radius: 12px;
   box-shadow: var(--shadow);
 }
@@ -128,9 +128,9 @@ body.dark-mode ul#favoritesList li:hover {
 }
 
 #cityInput {
-  width: 320px;
+  width: 300px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 30px;
   border-radius: 5px;
   border: none;
   margin-bottom: 8px;
@@ -174,14 +174,15 @@ body.dark-mode ul#favoritesList li:hover {
 }
 
 .current-top h2 {
-  font-size: 2.8em;
+  font-size: 2.5em;
   margin-bottom: 5px;
 }
 
 .current-top p {
   margin: 0;
-  font-size: 2em;
-  color: #d35400;
+  font-size: 1.5em;
+  font-style: bold;
+  color: #080808;
 }
 
 .current-middle {
@@ -191,9 +192,9 @@ body.dark-mode ul#favoritesList li:hover {
 }
 
 .temp-large {
-  font-size: 2.9em;
+  font-size: 2.8em;
   font-weight: bold;
-  color: #d35400;
+  color: #0b0b0b;
 }
 
 .current-middle img {
@@ -213,10 +214,12 @@ body.dark-mode ul#favoritesList li:hover {
   background: #fffbe6;
   padding: 10px 15px;
   border-radius: 8px;
+  font-style: italic;
   font-size: 1.6em;
   min-width: 120px;
   text-align: center;
   color: #15130e;
+  
 }
 
 #history {
@@ -226,8 +229,8 @@ body.dark-mode ul#favoritesList li:hover {
   flex-wrap: nowrap;
   overflow-x: visible;
   justify-content: center;
-  padding: 10px 0;
-  width: 100%;
+  padding: 8px;
+  width: 80%;
   box-sizing: border-box;
 }
 
@@ -238,24 +241,24 @@ body.dark-mode ul#favoritesList li:hover {
   padding: 10px;
   border-radius: 10px;
   text-align: center;
-  color: #2c2c2c;
+  color: #151515b8;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .forecast-item img {
-  width: 60px;
+  width: 50px;
   height: 30px;
   margin: 6px 0;
 }
 
 .forecast-date {
   font-weight: bold;
-  font-size: 0.95em;
+  font-size: 0.9em;
   margin-bottom: 5px;
 }
 
 .forecast-temp {
-  font-size: 1.2em;
+  font-size: 1.0em;
   font-weight: 600;
   margin-bottom: 5px;
 }
@@ -263,18 +266,18 @@ body.dark-mode ul#favoritesList li:hover {
 .forecast-vertical {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 }
 
 .forecast-row-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 245, 190, 0.75);
+  background: rgba(253, 253, 251, 0.97);
   padding: 20px 30px;
   border-radius: 20px;
   font-weight: 700;
-  color: #2e2e2e;
+  color: #f1eaea;
   font-size: 1.9em;
 }
 
@@ -298,22 +301,22 @@ body.dark-mode ul#favoritesList li:hover {
 
 #weatherTips {
   font-size: 2.1rem;
-  color: #3e3e3e;
-  background-color: hsl(40, 20%, 97%);
+  color: hsl(69, 78%, 4%);
+  background-color: hsl(30, 24%, 93%);
   border-radius: 8px;
   padding: 10px 15px;
   margin: 10px auto 20px auto;
   max-width: 420px;
   text-align: center;
   font-style: italic;
-  box-shadow: 0 2px 8px rgba(225, 188, 22, 0.25);
+  box-shadow: 0 2px 8px rgba(243, 242, 239, 0.25);
   line-height: 1.4;
   user-select: none;
   transition: background-color 0.3s ease;
 }
 
 #weatherTips:hover {
-  background-color: #ffeaa7;
+  background-color: #eceae5;
   cursor: default;
 }
 
@@ -336,6 +339,7 @@ body.dark-mode ul#favoritesList li:hover {
   font-size: 22px;
   color: #0a0a0a;
   font-style: italic;
+  font-style: bold;
   margin: 10px 0;
 }
 

@@ -178,6 +178,12 @@ function getMoodAndTips(temp, id) {
   };
   return { mood: t("mood_hot"), tip: t("safety_heat") };
 }
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js')
+    .then(reg => console.log("Service Worker Registered"))
+    .catch(err => console.error("Service Worker Failed", err));
+}
+
 
 async function fetchWeather(city) {
   const lang = elements.languageSelect.value;
